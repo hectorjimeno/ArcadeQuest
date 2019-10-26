@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/BarraSalud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/Counter.tscn" type="PackedScene" id=2]
+
+[node name="interface" type="Node2D" groups=[
+"hud",
+"persist",
+]]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BarraSalud" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 32.0
+margin_top = 33.0
+margin_right = 96.0
+rect_scale = Vector2( 3, 3 )
+
+[node name="Counter" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_left = 71.0
+margin_top = 82.0
+margin_right = 191.0
+margin_bottom = 128.0
+rect_scale = Vector2( 1, 1 )
+

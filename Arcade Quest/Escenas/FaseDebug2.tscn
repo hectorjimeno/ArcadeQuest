@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/JungleDirtTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Escenas/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Escenas/WorldComplete.tscn" type="PackedScene" id=3]
+
+[node name="FaseDebug2" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196619, 0, 0, 196620, 3, 0, 262155, 2, 0, 262156, 5, 0, 327686, 0, 0, 327687, 1, 0, 327688, 3, 0, 327691, 2, 0, 327692, 5, 0, 393227, 2, 0, 393228, 5, 0, 458763, 2, 0, 458764, 5, 0, 524291, 0, 0, 524292, 3, 0, 524299, 2, 0, 524300, 5, 0, 589826, 0, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 3, 0, 655362, 6, 0, 655363, 7, 0, 655364, 7, 0, 655365, 7, 0, 655366, 7, 0, 655367, 7, 0, 655368, 7, 0, 655369, 7, 0, 655370, 7, 0, 655371, 7, 0, 655372, 7, 0, 655373, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 528 )
+
+[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 896, 511 )
+world_scene = "res://Escenas/FaseDebug.tscn"
+
+[node name="WorldComplete2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 512 )
+world_scene = "res://Escenas/FaseDebug2.tscn"
+

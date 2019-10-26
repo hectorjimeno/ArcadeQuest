@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Tiles/WarpedCityTiles/tileset atravesable.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 3, 6, 3, -8, -5, -8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( -3.5, 6.3, 4.2, -8, -3.5, -8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 8 )
+
+[node name="TilesAtravesables" type="Node"]
+
+[node name="SueloIzd" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 96, 176, 16, 16 )
+region_filter_clip = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SueloIzd"]
+position = Vector2( 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloIzd/StaticBody2D"]
+position = Vector2( -3, -8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="SueloDer" type="Sprite" parent="."]
+position = Vector2( 256, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 144, 176, 16, 16 )
+region_filter_clip = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SueloDer"]
+position = Vector2( 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloDer/StaticBody2D"]
+position = Vector2( -12.5, -8 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="SueloMid" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 112, 176, 16, 16 )
+region_filter_clip = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SueloMid"]
+position = Vector2( 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloMid/StaticBody2D"]
+position = Vector2( -8, -8 )
+shape = SubResource( 3 )
+one_way_collision = true
+

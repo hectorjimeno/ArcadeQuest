@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/TileSetPrueba.tres" type="TileSet" id=1]
+[ext_resource path="res://Scripts/Escaleras.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2, 32 )
+
+[node name="TileMapEscalera" type="TileMap"]
+position = Vector2( -159, 95 )
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 327688, 4, 0, 393224, 4, 0, 458760, 4, 0 )
+
+[node name="AreaEscaleras" type="Area2D" parent="."]
+position = Vector2( 136, 112 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColisionEscalera" type="CollisionShape2D" parent="AreaEscaleras"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="AreaEscaleras" to="AreaEscaleras" method="_on_AreaEscaleras_body_entered"]
+[connection signal="body_exited" from="AreaEscaleras" to="AreaEscaleras" method="_on_AreaEscaleras_body_exited"]

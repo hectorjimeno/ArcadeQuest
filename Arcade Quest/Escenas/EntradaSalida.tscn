@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="EntradaSalida" type="Position2D" groups=[
+"pos",
+]]
+

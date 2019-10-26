@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/DisparoCargando.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Shot/Cargando/CargaDisparo 03.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Shot/Cargando/CargaDisparo 04.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Shot/Cargando/CargaDisparo 01.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Shot/Cargando/CargaDisparo 02.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Cargado",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Cargando",
+"speed": 8.0
+} ]
+
+[node name="EscenaDisparoCargando" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSpriteDisparoCargando" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "Cargado"
+playing = true
+
+[node name="TimerCarga" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerCarga" to="." method="_on_TimerCarga_timeout"]

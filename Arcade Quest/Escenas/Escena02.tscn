@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Level_root.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/Fondo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/TileSet.tres" type="TileSet" id=3]
+[ext_resource path="res://Escenas/Jugador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenas/WorldComplete.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Escenas/EnemigoDistancia.tscn" type="PackedScene" id=6]
+
+[node name="Escena02" type="Node2D" groups=[
+"level_root",
+]]
+script = ExtResource( 1 )
+
+[node name="Fondo" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 513
+format = 1
+tile_data = PoolIntArray( 0, 1610612746, 0, 1, 1610612746, 0, 2, 1610612746, 0, 3, 1610612746, 0, 4, 1610612746, 0, 5, 1610612746, 0, 6, 1610612746, 0, 7, 1610612746, 0, 8, 1610612746, 0, 9, 1610612746, 0, 10, 1610612746, 0, 11, 1610612746, 0, 12, 1610612746, 0, 13, 1610612746, 0, 14, 1610612746, 0, 15, 1610612746, 0, 65536, 536870922, 0, 65537, 536870912, 0, 65550, 536870914, 0, 65551, 536870922, 0, 196608, 1610612746, 0, 196620, 536870922, 0, 327689, 536870922, 0, 327690, 536870922, 0, 327691, 536870922, 0, 327692, 536870922, 0, 393216, 536870922, 0, 393217, 536870922, 0, 393218, 536870922, 0, 393225, 536870919, 0, 393226, 1610612745, 0, 393227, 1610612745, 0, 458752, 1610612745, 0, 458753, 1610612745, 0, 458761, 536870919, 0, 458762, 1610612745, 0, 458763, 1610612745, 0, 524288, 1610612745, 0, 524289, 1610612745, 0, 524294, 536870922, 0, 524295, 536870922, 0, 524296, 536870922, 0, 524297, 536870922, 0, 524298, 1610612745, 0, 524299, 1610612745, 0, 524303, 1610612746, 0, 589824, 1610612745, 0, 589825, 1610612745, 0, 589830, 536870919, 0, 589831, 1610612745, 0, 589832, 1610612745, 0, 589833, 1610612745, 0, 589834, 1610612745, 0, 589835, 1610612745, 0, 655360, 1610612745, 0, 655361, 1610612745, 0, 655362, 536870922, 0, 655363, 536870922, 0, 655364, 536870922, 0, 655365, 536870922, 0, 655366, 536870922, 0, 655367, 1610612745, 0, 655368, 1610612745, 0, 655369, 1610612745, 0, 655370, 1610612745, 0, 655371, 1610612745, 0, 720896, 1610612746, 0, 720897, 1610612746, 0, 720898, 1610612746, 0, 720899, 1610612746, 0, 720900, 1610612746, 0, 720901, 1610612746, 0, 720902, 1610612746, 0, 720903, 1610612746, 0, 720904, 1610612746, 0, 720905, 1610612746, 0, 720906, 1610612746, 0, 720907, 1610612746, 0, 720908, 1610612746, 0, 720909, 1610612746, 0, 720910, 1610612746, 0, 720911, 1610612746, 0 )
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"pared",
+]]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 513
+format = 1
+tile_data = PoolIntArray( 131072, 536870919, 0, 131087, 1610612740, 0, 196623, 1610612740, 0, 262156, 536870919, 0, 262159, 1610612740, 0, 327695, 1610612740, 0, 393228, 1610612744, 0, 393231, 1610612740, 0, 458754, 536870917, 0, 458764, 1610612743, 0, 458767, 1610612741, 0, 524290, 536870916, 0, 524300, 1610612743, 0, 589826, 536870915, 0, 589836, 1610612743, 0, 655372, 1610612742, 0 )
+
+[node name="Jugador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 70, 300 )
+
+[node name="enter_1" type="Position2D" parent="." groups=[
+"pos",
+]]
+position = Vector2( 64, 325 )
+
+[node name="enter_2" type="Position2D" parent="." groups=[
+"pos",
+]]
+position = Vector2( 971, 640 )
+
+[node name="WorldComplete" parent="." instance=ExtResource( 5 )]
+position = Vector2( -18.075, 325 )
+map = "res://Escenas/Escena01.tscn"
+pos_id = "enter_1"
+
+[node name="WorldComplete2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1043.2, 642 )
+map = "res://Escenas/Escena03.tscn"
+pos_id = "enter_1"
+
+[node name="EnemigoDistancia" parent="." instance=ExtResource( 6 )]
+position = Vector2( 704, 240 )
+

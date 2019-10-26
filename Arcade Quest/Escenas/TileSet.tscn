@@ -1,0 +1,204 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Tiles/WarpedCityTiles/tileset.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 3.5, 6, 3.5, -8, -3.35, -8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( -2.93, -8, 4, -8, -3, 6 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8, 8 )
+
+[node name="TileSet" type="Node2D"]
+
+[node name="SueloIzda" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 32, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 176, 16, 16 )
+
+[node name="SueloIzdaCuerpo" type="StaticBody2D" parent="SueloIzda"]
+position = Vector2( 4.5, 0 )
+collision_layer = 65536
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloIzda/SueloIzdaCuerpo"]
+shape = SubResource( 1 )
+
+[node name="SueloMid" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 160, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 176, 16, 16 )
+
+[node name="SueloMidCuerpo" type="StaticBody2D" parent="SueloMid"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloMid/SueloMidCuerpo"]
+shape = SubResource( 2 )
+
+[node name="SueloDcha" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 288, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 176, 16, 16 )
+
+[node name="SueloDchaCuerpo" type="StaticBody2D" parent="SueloDcha"]
+editor/display_folded = true
+position = Vector2( -4.75, 0 )
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloDcha/SueloDchaCuerpo"]
+position = Vector2( -0.25, 0 )
+shape = SubResource( 3 )
+
+[node name="ParedDchaArriba" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 16, 16, 16 )
+
+[node name="ParedDchaArribaCuerpo" type="StaticBody2D" parent="ParedDchaArriba"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDchaArriba/ParedDchaArribaCuerpo"]
+shape = SubResource( 4 )
+
+[node name="ParedDchaCentro" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 32, 16, 16 )
+
+[node name="ParedDchaCentroCuerpo" type="StaticBody2D" parent="ParedDchaCentro"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDchaCentro/ParedDchaCentroCuerpo"]
+shape = SubResource( 5 )
+
+[node name="ParedDchaAbajo" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 48, 16, 16 )
+
+[node name="ParedDchaAbajoCuerpo" type="StaticBody2D" parent="ParedDchaAbajo"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDchaAbajo/ParedDchaAbajoCuerpo"]
+shape = SubResource( 6 )
+
+[node name="ParedIzdaAbajo" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 384, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 48, 16, 16 )
+
+[node name="ParedIzdaAbajoCuerpo" type="StaticBody2D" parent="ParedIzdaAbajo"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzdaAbajo/ParedIzdaAbajoCuerpo"]
+shape = SubResource( 7 )
+
+[node name="ParedIzdaCentro" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 384, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+
+[node name="ParedIzdaCentroCuerpo" type="StaticBody2D" parent="ParedIzdaCentro"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzdaCentro/ParedIzdaCentroCuerpo"]
+shape = SubResource( 8 )
+
+[node name="ParedIzdaArriba" type="Sprite" parent="."]
+position = Vector2( 384, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+
+[node name="ParedIzdaArribaCuerpo" type="StaticBody2D" parent="ParedIzdaArriba"]
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzdaArriba/ParedIzdaArribaCuerpo"]
+shape = SubResource( 9 )
+
+[node name="SueloIntermedio" type="Sprite" parent="."]
+position = Vector2( 160, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 16, 16 )
+
+[node name="SueloAbajo" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 160, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 112, 176, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SueloAbajoCuerpo" type="StaticBody2D" parent="SueloAbajo"]
+editor/display_folded = true
+collision_layer = 65536
+collision_mask = 524289
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SueloAbajo/SueloAbajoCuerpo"]
+shape = SubResource( 9 )
+
